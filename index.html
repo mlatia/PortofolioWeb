@@ -13,10 +13,12 @@
             <div class="logo">
                 Melati <span>Anggraini</span>
             </div>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-checkbox">
+            <label for="hamburger-toggle" class="hamburg">&#9776;</label>
             <div class="links">
-                <div class="link"><a href="#">About</a></div>
-                <div class="link"><a href="#">Experiences</a></div>
-                <div class="link"><a href="#">Projects</a></div>
+                <div class="link"><a onclick="window.location='#about';" style="cursor: pointer;">About</a></div>
+                <div class="link"><a onclick="window.location='#experience';" style="cursor: pointer;">Experiences</a></div>
+                <div class="link"><a onclick="window.location='#projects';" style="cursor: pointer;">Projects</a></div>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
@@ -31,7 +33,7 @@
             </div>
         </div>
     </nav>
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="main-container">
             <div class="left-about">
                 <div class="image">
@@ -86,7 +88,7 @@
             </div>
         </div>
     </section>
-    <section class="experience-section">
+    <section class="experience-section" id="experience">
         <div class="experience">
             My <span>Experience</span>
         </div>

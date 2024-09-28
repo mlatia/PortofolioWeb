@@ -10,9 +10,9 @@
 
 body{
     width: 100%;
-    min-height: 100vh; /* Ubah dari height ke min-height */
-    overflow: auto; /* Pastikan overflow bisa scroll */
+    min-height: 100vh; 
     background: conic-gradient(from 130deg at -0.99% 80.26%, #00326C 262.9855942726135deg, #0B162D 319.3100953102112deg);
+    overflow-x: hidden; 
 }
 
 p {
@@ -123,8 +123,8 @@ nav{
     min-height: 90vh;
     opacity: 0;
     display: flex;
-    justify-content: center; /* Mencenterkan secara horizontal */
-    align-items: center; /* Mencenterkan secara vertikal */
+    justify-content: center;
+    align-items: center; 
     animation: fadeIn 1s ease-in forwards 1s;
     background: conic-gradient(from 130deg at -0.99% 80.26%, #00326C 262.9855942726135deg, #0B162D 319.3100953102112deg);
 }
@@ -173,6 +173,36 @@ nav{
     height: 150px;
 }
 
+/* Responsive adjustments for about section */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-container .left-about {
+        width: 50%;
+    }
+
+    .main-container .content {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
+
+
 .skill .skill-set{
     position: relative;
     z-index: 0;
@@ -180,13 +210,13 @@ nav{
 }
 
 .skill-set h3 {
-    margin-bottom: 5px; /* Adjust the value to control the space */
+    margin-bottom: 5px; 
 }
 
 .skill-set .button-to-webdev{
-    position: absolute; /* Position the button relative to .skill-set */
-    top: 25px; /* Adjust the top position as needed */
-    right: 0px; /* Adjust the right position as needed */
+    position: absolute; 
+    top: 25px; 
+    right: 0px; 
     z-index: 1;
     border-radius: 22.594px;
     background: linear-gradient(180deg, #FF5F7E 0%, #EFC78D 100%);
@@ -211,9 +241,9 @@ nav{
 }
 
 .skill-set .button-to-uiux{
-    position: absolute; /* Position the button relative to .skill-set */
-    top: 25px; /* Adjust the top position as needed */
-    right: 0px; /* Adjust the right position as needed */
+    position: absolute; 
+    top: 25px; 
+    right: 0px; 
     z-index: 1;
     border-radius: 22.594px;
     background: linear-gradient(180deg, #FF5F7E 0%, #EFC78D 100%);
@@ -229,6 +259,17 @@ nav{
 
 .skill-set .button-to-uiux:hover {
     transform: scale(1.2) rotate(-1.562deg); 
+}
+
+/* Responsive for skill section */
+@media (max-width: 600px) {
+    .skill-set .detail-skill {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .left-about {
+        width: 90%;
+    }
 }
 
 @keyframes animate {
@@ -350,144 +391,268 @@ nav{
     to { transform: scale(1); opacity: 1; }
 }
 
-
-/* Layout skill icon */
 .skill-set .detail-skill {
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns total */
-    grid-gap: 5px; /* Space between items */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 5px; 
     justify-items: center;
     margin-top: 0px;
 }
 
-/* Top row with exactly 2 icons */
 .detail-skill img:nth-child(1),
 .detail-skill img:nth-child(2) {
-    grid-column: span 1; /* Each icon takes one column */
-    grid-row: 1; /* Place them in the first row */
+    grid-column: span 1; 
+    grid-row: 1;
 }
 
-/* Bottom row with 3 icons */
 .detail-skill img:nth-child(n+3) {
-    grid-column: span 1; /* Each icon takes one column */
-    grid-row: 2; /* Place them in the second row */
+    grid-column: span 1; 
+    grid-row: 2;
 }
 
-/* Skill icon with animation starting relative to the skill set */
 .detail-skill .skill-icon {
     width: 50px;
     height: 50px;
-    position: relative; /* Icons' position relative to .skill-set */
+    position: relative;
     opacity: 0;
-    animation: random-fall 2s ease-out forwards; /* Default animation, randomized per icon */
+    animation: random-fall 2s ease-out forwards;
 }
 
-/* Randomized animations for different icons */
 .detail-skill img:nth-child(1) {
-    animation: random-fall-left 2s ease-out forwards; /* Fall to the left */
+    animation: random-fall-left 2s ease-out forwards; 
 }
 
 .detail-skill img:nth-child(2) {
-    animation: random-fall-right 2.2s ease-out forwards; /* Fall to the right */
+    animation: random-fall-right 2.2s ease-out forwards;
 }
 
 .detail-skill img:nth-child(3) {
-    animation: random-fall-left-slow 2.5s ease-out forwards; /* Fall slower and to the left */
+    animation: random-fall-left-slow 2.5s ease-out forwards; 
 }
 
 .detail-skill img:nth-child(4) {
-    animation: random-fall-right-fast 1.8s ease-out forwards; /* Fall faster and to the right */
+    animation: random-fall-right-fast 1.8s ease-out forwards;
 }
 
 .detail-skill img:nth-child(5) {
-    animation: random-fall-center 2.3s ease-out forwards; /* Fall straight down */
+    animation: random-fall-center 2.3s ease-out forwards;
 }
 
-/* Keyframe for falling to the left relative to the skill set */
 @keyframes random-fall-left {
     0% {
         opacity: 0;
-        transform: translate(-100px, -150px) rotate(0deg); /* Start from the left and above */
+        transform: translate(-100px, -150px) rotate(0deg); 
     }
     50% {
         opacity: 1;
-        transform: translate(-50px, 100px) rotate(180deg); /* Fall diagonally left */
+        transform: translate(-50px, 100px) rotate(180deg); 
     }
     100% {
-        transform: translate(0, 0) rotate(360deg); /* End at final position within the skill-set */
+        transform: translate(0, 0) rotate(360deg);
         opacity: 1;
     }
 }
 
-/* Keyframe for falling to the right relative to the skill set */
 @keyframes random-fall-right {
     0% {
         opacity: 0;
-        transform: translate(100px, -150px) rotate(0deg); /* Start from the right and above */
+        transform: translate(100px, -150px) rotate(0deg); 
     }
     50% {
         opacity: 1;
-        transform: translate(50px, 100px) rotate(180deg); /* Fall diagonally right */
+        transform: translate(50px, 100px) rotate(180deg);
     }
     100% {
-        transform: translate(0, 0) rotate(360deg); /* End at final position within the skill-set */
+        transform: translate(0, 0) rotate(360deg);
         opacity: 1;
     }
 }
 
-/* Keyframe for slow falling to the left */
 @keyframes random-fall-left-slow {
     0% {
         opacity: 0;
-        transform: translate(-80px, -180px) rotate(0deg); /* Start slightly left and higher */
+        transform: translate(-80px, -180px) rotate(0deg);
     }
     50% {
         opacity: 1;
-        transform: translate(-30px, 120px) rotate(180deg); /* Fall slower diagonally left */
+        transform: translate(-30px, 120px) rotate(180deg);
     }
     100% {
-        transform: translate(0, 0) rotate(360deg); /* End at final position */
+        transform: translate(0, 0) rotate(360deg);
         opacity: 1;
     }
 }
 
-/* Keyframe for fast falling to the right */
 @keyframes random-fall-right-fast {
     0% {
         opacity: 0;
-        transform: translate(120px, -100px) rotate(0deg); /* Start from right and a lower height */
+        transform: translate(120px, -100px) rotate(0deg);
     }
     50% {
         opacity: 1;
-        transform: translate(60px, 50px) rotate(180deg); /* Fall faster diagonally right */
+        transform: translate(60px, 50px) rotate(180deg);
     }
     100% {
-        transform: translate(0, 0) rotate(360deg); /* End at final position */
+        transform: translate(0, 0) rotate(360deg);
         opacity: 1;
     }
 }
 
-/* Keyframe for falling straight down */
 @keyframes random-fall-center {
     0% {
         opacity: 0;
-        transform: translateY(-200px) rotate(0deg); /* Start from above */
+        transform: translateY(-200px) rotate(0deg); 
     }
     50% {
         opacity: 1;
-        transform: translateY(100px) rotate(180deg); /* Fall straight down */
+        transform: translateY(100px) rotate(180deg);
     }
     100% {
-        transform: translateY(0) rotate(360deg); /* End in final position */
+        transform: translateY(0) rotate(360deg);
         opacity: 1;
     }
 }
 
 /* SECTION 2 */
 
+.experience-section {
+    padding: 50px 0;
+    background: #f5f5f5;
+    text-align: center;
+    position: relative;
+}
+
+.experience-section .experience {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #0B162D;
+}
+
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+}
+
+.experience-card {
+    background: linear-gradient(90deg, #FF5F7E 0%, #FF62A5 100%);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.experience-card h3 {
+    font-size: 24px;
+}
+
+.experience-card p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.experience-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #2c3e50;
+    transform: translateX(-50%);
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    left: -7%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #2a3e72;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: #2a3e72;
+    transform: translateX(-50%);
+}
+
+.experience-card:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    right: 100%; 
+    transform: translateX(50%);
+    width: 30px;
+    height: 30px;
+    background-color: #2a3e72;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    left: 100%; 
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #2a3e72;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card:nth-child(odd) {
+    margin-left: 52%; 
+}
+
+.experience-card:nth-child(even) {
+    margin-right: 52%; 
+}
+
+
+/* Adjust timeline layout for smaller screens */
+@media (max-width: 768px) {
+    .experience-container{
+        flex-direction: column;
+    }
+    .experience-card {
+        justify-content: center;
+        width: auto;
+        margin:10px ;
+    }
+
+    .experience-card::before {
+        left: 0px;
+    }    
+
+}
+
+/* SECTION 3 */
+
 .projects-section {
-    background-color: #00326C; /* Light background color for distinction */
+    background-color: #00326C;
     padding: 40px 0;
     text-align: center;
     display: flex;
@@ -573,7 +738,6 @@ nav{
     background-color: #802134;
 }
 
-/* Responsive: Adjust layout for smaller screens */
 @media (max-width: 992px) {
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
@@ -584,137 +748,11 @@ nav{
     .projects-container {
         grid-template-columns: 1fr;
     }
-}
 
-
-.experience-section {
-    padding: 50px 0;
-    background: #f5f5f5;
-    text-align: center;
-    position: relative;
-}
-
-.experience-section .experience {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #0B162D;
-}
-
-
-.experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    position: relative;
-}
-
-.experience-card {
-    background: linear-gradient(90deg, #FF5F7E 0%, #FF62A5 100%);
-    border-radius: 15px;
-    padding: 20px;
-    width: 30%;
-    max-width: 500px;
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.experience-card h3 {
-    font-size: 24px;
-}
-
-.experience-card p {
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-/* Central Vertical Line */
-.experience-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    background-color: #2c3e50;
-    transform: translateX(-50%);
-}
-
-.experience-card::before {
-    content: "";
-    position: absolute;
-    left: -7%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: #2a3e72;
-    border-radius: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Styling for the central vertical line */
-.timeline-line {
-    position: absolute;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background-color: #2a3e72;
-    transform: translateX(-50%);
-}
-
-/* Dot for odd cards (left side of the card) */
-.experience-card:nth-child(odd)::before {
-    content: "";
-    position: absolute;
-    right: 100%;  /* Pushes the dot to the left of the card */
-    transform: translateX(50%); /* Aligns it next to the central line */
-    width: 30px;
-    height: 30px;
-    background-color: #2a3e72;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Dot for even cards (right side of the card) */
-.experience-card:nth-child(even)::before {
-    content: "";
-    position: absolute;
-    left: 100%;  /* Pushes the dot to the right of the card */
-    transform: translateX(-50%); /* Aligns it next to the central line */
-    width: 30px;
-    height: 30px;
-    background-color: #2a3e72;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Positioning of experience cards */
-.experience-card:nth-child(odd) {
-    margin-left: 52%; /* Odd cards go to the right of the center line */
-}
-
-.experience-card:nth-child(even) {
-    margin-right: 52%; /* Even cards go to the left of the center line */
-}
-
-
-/* Positioning of experience cards */
-.experience-card:nth-child(odd) {
-    margin-left: 52%;
-}
-
-.experience-card:nth-child(even) {
-    margin-right: 52%;
+    .project-card {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 footer {
@@ -730,5 +768,51 @@ footer {
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+.hamburger-checkbox {
+    display: none;
+}
+
+.hamburg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburg {
+        display: block; 
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+    }
+    .about-section h1{
+        display: none;
+    }
+    .about-section .skill {
+        display: none;
+    }
+
+    /* Initially hide the links */
+    .links {
+        display: none;
+        flex-direction: column;
+        background-color: #0B162D;
+        width: 100%;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        text-align: center;
+    }
+    .hamburger-checkbox:checked + .hamburg + .links {
+        display: flex;
+    }
+    .links a {
+        padding: 10px;
+        border-bottom: 1px solid #648add;
+    }
+
+    .links a:hover {
+        background-color: #3F5FA2;
+    }
 }
 
