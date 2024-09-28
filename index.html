@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Melati Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                Melati <span>Anggraini</span>
+            </div>
+            <div class="links">
+                <div class="link"><a href="#">About</a></div>
+                <div class="link"><a href="#">Experiences</a></div>
+                <div class="link"><a href="#">Projects</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Service</a>
+                <a href="#">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section class="about-section">
+        <div class="main-container">
+            <div class="left-about">
+                <div class="image">
+                    <img src="src/mela.png" alt="Profile Image">
+                </div>
+                <div class="skill">
+                    <div class="skill-set">
+                        <img class="button-to-webdev" src="src/icon-arrow-right.svg" onclick="window.location='#projects';" style="cursor: pointer;">
+                        <h3>
+                            Web Developer
+                        </h3>
+                        <img src = "src/card-webdev.svg" >
+                        <div class="detail-skill">
+                            <img class="skill-icon" src="src/c++.png">
+                            <img class="skill-icon" src="src/html.png">
+                            <img class="skill-icon" src="src/social.png">
+                            <img class="skill-icon" src="src/java.png">
+                            <img class="skill-icon" src="src/py.png">
+                            <img class="skill-icon" src="src/react.png">
+                            <img class="skill-icon" src="src/tailwind.png">
+                            <img class="skill-icon" src="src/c.png">
+                        </div>
+                    </div>
+                    <div class="skill-set">
+                        <img class="button-to-uiux" src="src/icon-arrow-right.svg" onclick="window.location='#projects';" style="cursor: pointer;">
+                        <h3>
+                            UI UX Designer
+                        </h3>
+                        <img src = "src/card-uiux.svg" >
+                        <div class="detail-skill">
+                            <img class="figma-icon" src="src/figma.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Hey, I'm <span>Melati Anggraini</span></h1>
+                <div class="typewriter">I'm a <span class="typewriter-text"></span><label> UI UX Designer and Web Developer</label></div>
+                <p>Interest All about Creative, Design, and Code.</p>
+                <p> Think Originally and Differently. </p>
+                <h2>KickStart with Dot. </h2>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="btn">
+                    <a href="https://drive.google.com/file/d/1Uray_AWerjfjqnHMHoXsltzhG4GKDZqR/view?usp=drive_link" target="_blank">
+                        <button>Download CV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="experience-section">
+        <div class="experience">
+            My <span>Experience</span>
+        </div>
+        <div class="experience-container">
+            <div class="experience-card">
+                <div class="experience-content">
+                    <h3>Rumah Cantik Annisa</h3>
+                    <p>Head | Teachnical Support</p>
+                    <p>Sept 2024 – Present </p>
+                </div>
+            </div>
+            <div class="experience-card">
+                <div class="experience-content">
+                    <h3>GAMAIS ITB 2024</h3>
+                    <p>Deputy Minister | Internal Control Unit</p>
+                    <p>Feb 2024 – Dec 2024</p>
+                </div>
+            </div>
+            
+            <!-- Experience 3 -->
+            <div class="experience-card">
+                <div class="experience-content">
+                    <h3>P3RI 1445 H</h3>
+                    <p>Deputy Division Head | Data Centre</p>
+                    <p>Nov 2023 – Jul 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="projects-section" id="projects">
+        <div class="logo">
+            My <span>Projects</span>
+        </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <iframe src="https://rive.app/community/11829-22602-sertificate/embed" 
+                    width="318.67" 
+                    height="226.6" 
+                    style="border: none;">
+                </iframe>
+                <h3>Sertificate Rive Animation</h3>
+                <p>My first freelance projects animation, I create animation procedure print certificate for a printing shop.</p>
+                <a href="https://rive.app/community/files/11829-22602-sertificate/" target="_blank">
+                    <button >View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/sparta.png" alt="SPARTA">
+                <h3>SPARTA HMIF 2024</h3>
+                <p>SPARTA : Kaderisasi HMIF ITB 2024. </p>
+                <a href="https://app.hmif.dev/sparta" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+    
+            <div class="project-card">
+                <img src="src/eksporku.png" alt="Eksporku">
+                <h3>Eksporku</h3>
+                <p>Platform Ekspor untuk Pengembangan UMKM di Indonesia melalui fitur pelatihan dan konekinBuyer . </p>
+                <a href="https://www.instagram.com/eksporku_/" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/pawrents.png" alt="Project 4">
+                <h3>Pawrents Cat Adopt</h3>
+                <p>Platform Donasi kucing-kucing lucu yang ada di sekitarmu.</p>
+                <a href="https://pawrents.vercel.app/" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/joyfullearn.png" alt="Project 3">
+                <h3>JoyfulLearn</h3>
+                <p>Belajar menyenangkan dengan Metode Gamifikasi Untuk Siswa SD.</p>
+                <a href="https://www.instagram.com/joyfullearn_/" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/ifest.png" alt="Project 3">
+                <h3>SahabatModal</h3>
+                <p>Solusi bagi UMKM di Indonesia yang kesulitan mendapatkan akses pendanaan.</p>
+                <a href="https://www.figma.com/design/WdQwl2GdwwcRNpTXNXUGor/IFEST?m=auto&t=KDihpSzVpAMBcNNn-6" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/GUI.gif" alt="Project 3">
+                <h3>Fingerprint Detector</h3>
+                <p>Development of a biometric identification system in C# with KMP and BM Algorithm </p>
+                <a href="https://github.com/shulhajws/Tubes3_BismillahBersinar" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/wordladdersolver.png" alt="Project 3">
+                <h3>World Ladder Solver</h3>
+                <p>Solver Game Word Ladder Menggunakan Algoritma UCS, Greedy Best First Search, dan A*</p>
+                <a href="https://github.com/mlatia/Tucil3_13522035" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+            <div class="project-card">
+                <img src="src/belekping.png" alt="Project 3">
+                <h3>Permainan Pengelolaan Ladang</h3>
+                <p> Petualangan di dunia ladang seru, tapi awas ada serangan beruang. </p>
+                <a href="https://github.com/shulhajws/belekping" target="_blank">
+                    <button>View Project</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Melati Anggraini. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
