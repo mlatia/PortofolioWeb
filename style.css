@@ -779,12 +779,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .hamburg {
-        display: block; 
-        cursor: pointer;
-        font-size: 2rem;
-        color: white;
-    }
     .about-section h1{
         display: none;
     }
@@ -803,9 +797,7 @@ footer p {
         left: 0;
         text-align: center;
     }
-    .hamburger-checkbox:checked + .hamburg + .links {
-        display: flex;
-    }
+    
     .links a {
         padding: 10px;
         border-bottom: 1px solid #648add;
